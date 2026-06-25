@@ -1,0 +1,85 @@
+{
+  "name": "pre-commit-vscode",
+  "publisher": "c0m1c5an5",
+  "displayName": "pre-commit",
+  "description": "Run pre-commit as file formatter",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "icon": "images/icon.png",
+  "license": "MIT",
+  "author": {
+    "name": "Maksym Kondratenko",
+    "email": "m.kondratenko.ua@gmaiol.com",
+    "url": "https://github.com/c0m1c5an5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/c0m1c5an5/pre-commit-vscode"
+  },
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "pre-commit",
+      "properties": {
+        "pre-commit-vscode.executablePath": {
+          "type": "string",
+          "default": "pre-commit",
+          "description": "Path to the pre-commit executable."
+        },
+        "pre-commit-vscode.timeout": {
+          "type": "number",
+          "default": 10,
+          "description": "Seconds to wait before killing a pre-commit run."
+        },
+        "pre-commit-vscode.debug": {
+          "type": "boolean",
+          "default": false,
+          "description": "Write diagnostic messages to the pre-commit Output Channel."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@types/vscode": "^1.125.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "esbuild": "^0.28.1",
+    "eslint": "^10.5.0",
+    "license-checker-rseidelsohn": "^5.0.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  },
+  "dependencies": {
+    "js-yaml": "^5.1.0"
+  }
+}
