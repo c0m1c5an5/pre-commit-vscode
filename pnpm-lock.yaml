@@ -22,14 +22,14 @@ importers:
         specifier: 24.x
         version: 24.13.2
       '@types/vscode':
-        specifier: ^1.125.0
+        specifier: ^1.75.0
         version: 1.125.0
       '@vscode/test-cli':
         specifier: ^0.0.15
         version: 0.0.15
       '@vscode/test-electron':
         specifier: ^3.0.0
-        version: 3.0.0
+        version: 3.0.0(supports-color@8.1.1)
       esbuild:
         specifier: ^0.28.1
         version: 0.28.1
@@ -38,7 +38,7 @@ importers:
         version: 10.5.0(supports-color@8.1.1)
       license-checker-rseidelsohn:
         specifier: ^5.0.1
-        version: 5.0.1
+        version: 5.0.1(supports-color@8.1.1)
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -2146,14 +2146,14 @@ snapshots:
   '@npmcli/agent@4.0.2':
     dependencies:
       agent-base: 7.1.4
-      http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.6
+      http-proxy-agent: 7.0.2(supports-color@8.1.1)
+      https-proxy-agent: 7.0.6(supports-color@8.1.1)
       lru-cache: 11.5.1
       socks-proxy-agent: 8.0.5
     transitivePeerDependencies:
       - supports-color
 
-  '@npmcli/arborist@9.6.0':
+  '@npmcli/arborist@9.6.0(supports-color@8.1.1)':
     dependencies:
       '@gar/promise-retry': 1.0.3
       '@isaacs/string-locale-compare': 1.1.0
@@ -2179,7 +2179,7 @@ snapshots:
       npm-package-arg: 13.0.2
       npm-pick-manifest: 11.0.3
       npm-registry-fetch: 19.1.1
-      pacote: 21.5.1
+      pacote: 21.5.1(supports-color@8.1.1)
       parse-conflict-json: 5.0.1
       proc-log: 6.1.0
       proggy: 4.0.0
@@ -2223,7 +2223,7 @@ snapshots:
     dependencies:
       cacache: 20.0.4
       json-parse-even-better-errors: 5.0.0
-      pacote: 21.5.1
+      pacote: 21.5.1(supports-color@8.1.1)
       proc-log: 6.1.0
       semver: 7.8.5
     transitivePeerDependencies:
@@ -2283,10 +2283,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sigstore/tuf@4.0.2':
+  '@sigstore/tuf@4.0.2(supports-color@8.1.1)':
     dependencies:
       '@sigstore/protobuf-specs': 0.5.1
-      tuf-js: 4.1.0
+      tuf-js: 4.1.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2426,10 +2426,10 @@ snapshots:
     transitivePeerDependencies:
       - monocart-coverage-reports
 
-  '@vscode/test-electron@3.0.0':
+  '@vscode/test-electron@3.0.0(supports-color@8.1.1)':
     dependencies:
-      http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.6
+      http-proxy-agent: 7.0.2(supports-color@8.1.1)
+      https-proxy-agent: 7.0.6(supports-color@8.1.1)
       jszip: 3.10.1
       ora: 8.2.0
       semver: 7.8.5
@@ -3052,14 +3052,14 @@ snapshots:
 
   http-cache-semantics@4.2.0: {}
 
-  http-proxy-agent@7.0.2:
+  http-proxy-agent@7.0.2(supports-color@8.1.1):
     dependencies:
       agent-base: 7.1.4
       debug: 4.4.3(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  https-proxy-agent@7.0.6:
+  https-proxy-agent@7.0.6(supports-color@8.1.1):
     dependencies:
       agent-base: 7.1.4
       debug: 4.4.3(supports-color@8.1.1)
@@ -3290,9 +3290,9 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  license-checker-rseidelsohn@5.0.1:
+  license-checker-rseidelsohn@5.0.1(supports-color@8.1.1):
     dependencies:
-      '@npmcli/arborist': 9.6.0
+      '@npmcli/arborist': 9.6.0(supports-color@8.1.1)
       '@npmcli/package-json': 7.0.5
       chalk: 4.1.2
       debug: 4.4.3(supports-color@8.1.1)
@@ -3583,7 +3583,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  pacote@21.5.1:
+  pacote@21.5.1(supports-color@8.1.1):
     dependencies:
       '@gar/promise-retry': 1.0.3
       '@npmcli/git': 7.0.2
@@ -3599,7 +3599,7 @@ snapshots:
       npm-pick-manifest: 11.0.3
       npm-registry-fetch: 19.1.1
       proc-log: 6.1.0
-      sigstore: 4.1.1
+      sigstore: 4.1.1(supports-color@8.1.1)
       ssri: 13.0.1
       tar: 7.5.16
     transitivePeerDependencies:
@@ -3831,13 +3831,13 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  sigstore@4.1.1:
+  sigstore@4.1.1(supports-color@8.1.1):
     dependencies:
       '@sigstore/bundle': 4.0.0
       '@sigstore/core': 3.2.1
       '@sigstore/protobuf-specs': 0.5.1
       '@sigstore/sign': 4.1.1
-      '@sigstore/tuf': 4.0.2
+      '@sigstore/tuf': 4.0.2(supports-color@8.1.1)
       '@sigstore/verify': 3.1.1
     transitivePeerDependencies:
       - supports-color
@@ -4011,7 +4011,7 @@ snapshots:
     dependencies:
       typescript: 6.0.3
 
-  tuf-js@4.1.0:
+  tuf-js@4.1.0(supports-color@8.1.1):
     dependencies:
       '@tufjs/models': 4.1.0
       debug: 4.4.3(supports-color@8.1.1)

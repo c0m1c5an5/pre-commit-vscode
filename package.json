@@ -3,9 +3,9 @@
   "publisher": "c0m1c5an5",
   "displayName": "pre-commit",
   "description": "Run pre-commit as file formatter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
-    "vscode": "^1.125.0"
+    "vscode": "^1.75.0"
   },
   "categories": [
     "Other"
@@ -65,7 +65,7 @@
     "@types/js-yaml": "^4.0.9",
     "@types/mocha": "^10.0.10",
     "@types/node": "24.x",
-    "@types/vscode": "^1.125.0",
+    "@types/vscode": "^1.75.0",
     "@vscode/test-cli": "^0.0.15",
     "@vscode/test-electron": "^3.0.0",
     "esbuild": "^0.28.1",
