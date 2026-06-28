@@ -25,7 +25,9 @@ const runningFiles = new Set<string>();
 function debug(message: string): void {
   const cfg = vscode.workspace.getConfiguration("pre-commit-vscode");
   if (cfg.get<boolean>("debug", false)) {
-    outputChannel.appendLine(`[debug] ${message}`);
+    const line = `[pre-commit] ${message}`;
+    outputChannel.appendLine(line);
+    console.log(line);
   }
 }
 
@@ -119,7 +121,7 @@ function runPreCommit(
 
     proc.on("close", (code) => {
       clearTimeout(timer);
-      debug(`exit code: ${code}`);
+      debug(`Pre-commit exit code: ${code}`);
       resolve({ code, stdout, stderr });
     });
 
@@ -199,6 +201,8 @@ async function handleSave(document: vscode.TextDocument): Promise<void> {
       if (stderr) {
         outputChannel.appendLine(stderr);
       }
+      debug(`exit stdout: ${stdout}`);
+      debug(`exit stderr: ${stderr}`);
     }
 
     const diskContent = fs.readFileSync(filePath, "utf-8");
@@ -235,7 +239,13 @@ export function activate(context: vscode.ExtensionContext): void {
   outputChannel = vscode.window.createOutputChannel("pre-commit");
   context.subscriptions.push(outputChannel);
   context.subscriptions.push(
-    vscode.workspace.onDidSaveTextDocument(handleSave),
+    vscode.workspace.onDidSaveTextDocument((doc) =>
+      handleSave(doc).catch((err: unknown) => {
+        const msg = `[pre-commit] Unhandled error: ${err}`;
+        outputChannel.appendLine(msg);
+        console.error(msg);
+      }),
+    ),
   );
   context.subscriptions.push(
     vscode.languages.registerDocumentFormattingEditProvider(

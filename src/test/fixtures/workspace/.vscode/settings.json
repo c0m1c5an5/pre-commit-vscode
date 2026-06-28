@@ -1,0 +1,7 @@
+{
+  "files.trimTrailingWhitespace": false,
+  "files.trimFinalNewlines": false,
+  "files.insertFinalNewline": false,
+  "pre-commit-vscode.debug": true,
+  "pre-commit-vscode.timeout": 60
+}

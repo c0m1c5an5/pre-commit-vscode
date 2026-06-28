@@ -1,8 +1,10 @@
-# Change Log
+## [Unreleased]
 
-All notable changes to the "pre-commit-vscode" extension will be documented in this file.
+### Added
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Extension errors are now logged to the "pre-commit" output channel
+- When `pre-commit-vscode.debug` is enabled, pre-commit stdout/stderr is
+  included in the output on non-zero exit
 
 ## [0.0.2]
 
