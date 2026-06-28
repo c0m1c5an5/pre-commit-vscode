@@ -3,7 +3,7 @@
   "publisher": "c0m1c5an5",
   "displayName": "pre-commit",
   "description": "Run pre-commit as file formatter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.75.0"
   },
