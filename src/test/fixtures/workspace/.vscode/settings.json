@@ -1,5 +1,6 @@
 {
   "files.trimTrailingWhitespace": false,
   "files.trimFinalNewlines": false,
-  "files.insertFinalNewline": false
+  "files.insertFinalNewline": false,
+  "pre-commit-vscode.debug": true
 }

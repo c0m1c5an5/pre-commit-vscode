@@ -25,7 +25,9 @@ const runningFiles = new Set<string>();
 function debug(message: string): void {
   const cfg = vscode.workspace.getConfiguration("pre-commit-vscode");
   if (cfg.get<boolean>("debug", false)) {
-    outputChannel.appendLine(`[debug] ${message}`);
+    const line = `[pre-commit] ${message}`;
+    outputChannel.appendLine(line);
+    console.log(line);
   }
 }
 
