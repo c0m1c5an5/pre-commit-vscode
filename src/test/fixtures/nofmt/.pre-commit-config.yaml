@@ -1,0 +1,7 @@
+repos:
+  - repo: local
+    hooks:
+      - id: lint
+        name: Lint
+        entry: ./noop.py
+        language: python
