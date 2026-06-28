@@ -41,7 +41,7 @@ jobs:
       - name: Compile extension and tests
         run: pnpm run compile-tests && pnpm run compile
 
-      - name: Run tests (Linux — needs virtual display)
+      - name: Run tests
         if: runner.os == 'Linux'
         run: xvfb-run -a pnpm test
 
