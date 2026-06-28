@@ -6,6 +6,10 @@
 - When `pre-commit-vscode.debug` is enabled, pre-commit stdout/stderr is
   included in the output on non-zero exit
 
+### Changed
+
+- The default pre-commit timeout is set to 60s instead of 10s
+
 ## [0.0.2]
 
 - Allow VSCode versions >=1.75.0 <2.0.0

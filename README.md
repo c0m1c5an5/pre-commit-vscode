@@ -51,7 +51,7 @@ your workspace settings:
 | Setting                            | Default        | Description                             |
 |------------------------------------|----------------|-----------------------------------------|
 | `pre-commit-vscode.executablePath` | `"pre-commit"` | Path to the pre-commit executable       |
-| `pre-commit-vscode.timeout`        | `10`           | Seconds before killing a pre-commit run |
+| `pre-commit-vscode.timeout`        | `60`           | Seconds before killing a pre-commit run |
 
 ## Requirements
 

@@ -181,7 +181,7 @@ async function handleSave(document: vscode.TextDocument): Promise<void> {
   try {
     const cfg = vscode.workspace.getConfiguration("pre-commit-vscode");
     const executable = cfg.get<string>("executablePath", "pre-commit");
-    const timeoutMs = cfg.get<number>("timeout", 10) * 1000;
+    const timeoutMs = cfg.get<number>("timeout", 60) * 1000;
 
     const { code, stdout, stderr } = await runPreCommit(
       filePath,
