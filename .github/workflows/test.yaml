@@ -35,12 +35,6 @@ jobs:
       - name: Install pre-commit
         run: pip install pre-commit
 
-      - name: Cache pre-commit environments
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
-        with:
-          path: ~/.cache/pre-commit
-          key: pre-commit-${{ runner.os }}-${{ hashFiles('src/test/fixtures/workspace/.pre-commit-config.yaml') }}
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 

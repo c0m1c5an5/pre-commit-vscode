@@ -8,6 +8,6 @@ export default defineConfig({
 	files: 'out/test/**/*.test.js',
 	workspaceFolder: path.join(__dirname, 'src/test/fixtures/workspace'),
 	mocha: {
-		timeout: 60_000,
+		timeout: 120_000,
 	},
 });

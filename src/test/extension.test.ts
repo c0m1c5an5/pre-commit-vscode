@@ -15,7 +15,7 @@ let workspaceDir: string;
 function waitForDocumentText(
   doc: vscode.TextDocument,
   predicate: (text: string) => boolean,
-  timeoutMs = 30_000,
+  timeoutMs = 90_000,
 ): Promise<string> {
   return new Promise((resolve, reject) => {
     if (predicate(doc.getText())) {
