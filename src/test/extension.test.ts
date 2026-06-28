@@ -3,6 +3,7 @@ import * as vscode from "vscode";
 import * as path from "path";
 import * as fs from "fs";
 import * as os from "os";
+import * as cp from "child_process";
 
 const EXTENSION_ID = "c0m1c5an5.pre-commit-vscode";
 
@@ -82,9 +83,11 @@ suite("pre-commit extension E2E", () => {
       `Extension ${EXTENSION_ID} not found — is it installed in the test runner?`,
     );
     await ext.activate();
+    cp.spawnSync("git", ["init"], { cwd: workspaceDir });
   });
 
   suiteTeardown(() => {
+    fs.rmSync(path.join(workspaceDir, ".git"), { recursive: true });
     const samplePath = path.join(workspaceDir, "sample.py");
     if (fs.existsSync(samplePath)) {
       fs.unlinkSync(samplePath);
